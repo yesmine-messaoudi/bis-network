@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Visualisation des données de la collection restaurants</title>
+</head>
+
+<body>
+	<h1>Visualisation des donnees de la collection restaurants</h1>
+	
+	<ul>
+		
+	</ul>
+  <script>
+    const list=document.querySelector('ul');
+    fetch('./restaurants.json')
+    .then(res=>res.json())
+    .then(data=>{
+       data.array.forEach(post => {
+         list.insertAdjacentHTML('beforeend',`<li>${post.cuisine}</li>`)
+       });
+    })
+   </script>
+
+</body>
+
+</html>
